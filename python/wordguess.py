@@ -53,7 +53,7 @@ class WordGuess():
             break
         print(f"You successfully guessed: {guess}")
         if guess in self.secret_word:
-            if guess not in self.guesses_letters:
+            if guess not in self.guessed_letters:
                 self.guessed_letters.append(guess)
                 print(f"Good job! '{guess} is in the word!")
             else:
