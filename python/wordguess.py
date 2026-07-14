@@ -13,11 +13,12 @@ class WordGuess:
     pass
 
 def play(self):
+    print("Welcome to Word Guess!")
     while True:
-        print("Welcome to Word Guess!")
         guess = (input("Guess a word"))
         if guess == "q":
             break #to quit the game
+        print(f"You guessed: {guess}")
         
 
 def main():
