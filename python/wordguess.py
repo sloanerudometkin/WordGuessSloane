@@ -24,7 +24,7 @@ class WordGuess():
         last_name = input("Enter your last name")
         self.player.set_last_name(last_name)
 
-        while true:
+        while True:
             age_input = input("Enter your age: ").strip()
             if age_input.isdigit():
                 self.player.set_age(int(age_input))
