@@ -26,6 +26,15 @@ class WordGuess():
                 display.append("_")
 
         return " ".join(display)
+    
+    def get_guess(self) -> str:
+        while True:
+            guess = input("Guess a letter or press 'q' to quit: ").strip().upper()
+            if guess == "Q":
+                return 'Q'
+            if len(guess) == 1 and guess.isalpha():
+                return guess
+            print("Invalid input! Please enter a single letter from A-Z.")
 
 
     def display_game(self):
@@ -36,9 +45,13 @@ class WordGuess():
 
     def play(self):
         print("Welcome to Word Guess!")
-        print()
-
-        self.display_game()
+        while self.wrong.guesses < self.max_attempts:
+            self.display_game()
+        guess = self.get_guess()
+        if guess == "Q":
+            print("Thanks for playing!")
+            break
+        print(f"You successfully guessed: {guess}")
 
     # while True:
     #     guess = (input("Guess a word"))
