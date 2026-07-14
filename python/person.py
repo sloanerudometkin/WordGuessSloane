@@ -2,9 +2,7 @@ from person_interface import PersonInterface
 
 
 class Person(PersonInterface):
-        
     """Implementation of PersonInterface."""
-    
     def __init__(self):
         self._first_name = None
         self._last_name = None
