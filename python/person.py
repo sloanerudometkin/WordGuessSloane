@@ -2,7 +2,6 @@ from person_interface import PersonInterface
 
 
 class Person(PersonInterface):
-    def __init__(self,name)
         
     """Implementation of PersonInterface."""
     
