@@ -45,13 +45,22 @@ class WordGuess():
 
     def play(self):
         print("Welcome to Word Guess!")
-        while self.wrong.guesses < self.max_attempts:
+        while self.wrong_guesses < self.max_attempts:
             self.display_game()
         guess = self.get_guess()
         if guess == "Q":
             print("Thanks for playing!")
             break
         print(f"You successfully guessed: {guess}")
+        if guess in self.secret_word:
+            if guess not in self.guesses_letters:
+                self.guessed_letters.append(guess)
+                print(f"Good job! '{guess} is in the word!")
+            else:
+                print(f"You already guessed '{guess}'.")
+        else:
+            self.wrong_guesses += 1
+            print(f"Sorry, '{guess}' is not in the secret word.")
 
     # while True:
     #     guess = (input("Guess a word"))
