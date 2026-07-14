@@ -2,6 +2,8 @@ from person_interface import PersonInterface
 
 
 class Person(PersonInterface):
+    def __init__(self,name)
+        
     """Implementation of PersonInterface."""
     
     def __init__(self):
@@ -10,7 +12,7 @@ class Person(PersonInterface):
         self._age = None
     
     def get_first_name(self) -> str:
-        
+
         return self._first_name
     
     def set_first_name(self, first_name: str) -> None:
