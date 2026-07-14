@@ -5,12 +5,13 @@ WordGuess game implementation.
 @version 1.0.0
 @date 5/27/21 11:02 AM
 """
-
+from person import Person
 
 class WordGuess:
     def __init__(self):
-    """WordGuess game class - ready for implementation."""
-    pass
+        words = ["Red", "Orange", "Yellow", "Green", "Blue", "Purple"]
+        index = random.randint(0, len(words)-1)
+        self.word = words[index]
 
 def play(self):
     print("Welcome to Word Guess!")
