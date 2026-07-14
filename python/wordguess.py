@@ -15,8 +15,10 @@ class WordGuess:
 def play(self):
     while True:
         print("Welcome to Word Guess!")
-        guess = str(input("Guess a word"))
-        if (guess = )
+        guess = (input("Guess a word"))
+        if guess == "q":
+            break #to quit the game
+        
 
 def main():
     game = WordGuess()
