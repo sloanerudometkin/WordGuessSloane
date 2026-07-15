@@ -33,15 +33,7 @@ class WordGuess():
                 print("Invalid input... enter a number for your age.")
 
     def display_word(self):
-        display = []
-
-        for letter in self.secret_word:
-            if letter in self.guessed_letters:
-                display.append(letter)
-            else:
-                display.append("_")
-
-        return " ".join(display)
+        return " ".join(letter if letter in self.guessed_letters else "_" for letter in self.secret_word)
     
     def get_guess(self) -> str:
         while True:
@@ -54,9 +46,8 @@ class WordGuess():
             if guess in self.guessed_letters:
                 print(f"You already guessed '{guess}'. Try a different letter.")
                 continue
-            if len(guess) == 1 and guess.isalpha():
-                return guess
-            print("Invalid input! Please enter a single letter from A-Z.")
+
+            return guess
 
     def display_game(self):
         print("Word: ", self.display_word())
@@ -65,9 +56,7 @@ class WordGuess():
 
     def play(self):
         print("Welcome to Word Guess!")
-
         self.setup_player()
-
         print(f"\nHello, {self.player.get_first_name()}! Let's play.")
 
         while self.wrong_guesses < self.max_attempts:
@@ -79,7 +68,6 @@ class WordGuess():
                 break
 
             print(f"You successfully guessed: {guess}")
-
             self.guessed_letters.append(guess)
 
             if guess in self.secret_word:
@@ -89,7 +77,6 @@ class WordGuess():
                     self.display_game()
                     print(f"Congratulations! You guessed the word: {self.secret_word}!")
                     break
-
             else:
                 self.wrong_guesses += 1
                 print(f"Sorry, '{guess}' is not in the secret word.")
@@ -98,16 +85,6 @@ class WordGuess():
             print("\n--- GAME OVERRR ---")
             self.display_game()
             print(f"You ran out of guesses... the secret word was: {self.secret_word}")
-        
-
-            #check if all the letters in the secret word are in the guess list
-         #exit game if they win
-
-    # while True:
-    #     guess = (input("Guess a word"))
-    #     if guess == "q":
-    #         break #to quit the game
-    #     print(f"You guessed: {guess}")
 
 def main():
     game = WordGuess()
