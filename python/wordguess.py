@@ -12,8 +12,8 @@ from person import Person
 class WordGuess():
     def __init__(self):
         self.player = Person()
-        self.secret_word = "HELLO"
-        self.guessed_letters = [] #temp guesses to test display
+        self.secret_word = "PERSON"
+        self.guessed_letters = []
         self.max_attempts = 6
         self.wrong_guesses = 0
 
@@ -84,6 +84,11 @@ class WordGuess():
 
             if guess in self.secret_word:
                 print(f"Good job! '{guess} is in the word!")
+                if all(letter in self.guessed_letters for letter in self.secret_word):
+                    print("\n--- UR A WINNER! ---")
+                    self.display_game()
+                    print(f"Congratulations! You guessed the word: {self.secret_word}!")
+                    break
 
             else:
                 self.wrong_guesses += 1
