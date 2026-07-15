@@ -58,7 +58,6 @@ class WordGuess():
                 return guess
             print("Invalid input! Please enter a single letter from A-Z.")
 
-
     def display_game(self):
         print("Word: ", self.display_word())
         print("Guessed letters: ", self.guessed_letters)
