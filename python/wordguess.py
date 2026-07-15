@@ -5,8 +5,6 @@ WordGuess game implementation.
 @version 1.0.0
 @date 5/27/21 11:02 AM
 """
-import random
-
 from person import Person
 
 class WordGuess():
@@ -31,9 +29,11 @@ class WordGuess():
                 break
             else:
                 print("Invalid input... enter a number for your age.")
-
-    def display_word(self):
-        return " ".join(letter if letter in self.guessed_letters else "_" for letter in self.secret_word)
+    
+    def display_game(self):
+        print("Word: ", self.display_word())
+        print("Guessed letters: ", self.guessed_letters)
+        print("Wrong guesses: ", self.wrong_guesses)
     
     def get_guess(self) -> str:
         while True:
@@ -48,11 +48,10 @@ class WordGuess():
                 continue
 
             return guess
-
-    def display_game(self):
-        print("Word: ", self.display_word())
-        print("Guessed letters: ", self.guessed_letters)
-        print("Wrong guesses: ", self.wrong_guesses)
+        
+    def display_word(self):
+        # asks self.guessed_letters list and adds letter if not in list with a space in between
+        return " ".join(letter if letter in self.guessed_letters else "_" for letter in self.secret_word)
 
     def play(self):
         print("Welcome to Word Guess!")
@@ -92,6 +91,4 @@ def main():
 
 if __name__ == "__main__":
     main()
-
-
 
