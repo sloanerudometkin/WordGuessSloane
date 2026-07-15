@@ -60,7 +60,6 @@ class WordGuess():
 
 
     def display_game(self):
-
         print("Word: ", self.display_word())
         print("Guessed letters: ", self.guessed_letters)
         print("Wrong guesses: ", self.wrong_guesses)
